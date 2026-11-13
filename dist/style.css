@@ -128,3 +128,21 @@ h1 { font-family: 'Instrument Serif', 'Baskerville', Georgia, serif; font-weight
   .model small { font-size: 11px; }
   .model b { display: none; }
 }
+
+.masthead-links { display: flex; align-items: center; gap: clamp(10px, 2vw, 25px); }
+.room-link {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  padding: 8px 11px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+.room-link:hover { background: #264638; }
+@media (max-width: 440px) {
+  .masthead-links .source { display: none; }
+  .room-link { font-size: 12px; }
+}

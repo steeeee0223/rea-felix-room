@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" class="bm-scene bm-desktop">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Operate the recovered CRT, VCR, and BASIC computer from Felix Rieseberg’s portfolio.">
+  <title>Interactive room · The Recovered Room</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Caveat:wght@600&amp;family=Courier+Prime:wght@400;700&amp;family=VT323&amp;display=swap">
+  <link rel="stylesheet" href="./runtime/desktop.css">
+  <link rel="stylesheet" href="./room.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <div id="bm-root">
+<div id="still" aria-hidden="true"><div class="tv-spill"><i></i></div></div>
+<div id="osd" aria-hidden="true"><div class="tv-scr"><div class="tv-pic"><div class="tv-lb">▶▶ LOADING</div><div class="tv-ch">CH 00</div><div class="tv-mid"><div class="tv-cta"></div><div class="tv-meter"><span class="bar"><i></i></span><span class="pc">0%</span></div><div class="tv-snd on"><span>SOUND</span><b><i class="s-on">ON</i><i class="s-off">OFF</i></b></div></div></div><div class="tv-noise"></div><div class="tv-glass"></div></div></div>
+<button id="enter" hidden aria-label="Enter the room"></button>
+<button id="gate-sound" hidden role="switch" aria-checked="true">Sound</button>
+
+
+<canvas id="gl" aria-label="A late-90s production monitor on a desk by a rainy Berlin window at night. Its input buttons and the stack of tapes navigate the site."></canvas>
+
+<div class="hud top">
+  <button class="name" id="home-link">The Recovered Room</button>
+  <nav class="menu" aria-label="Site">
+    <a href="#about" data-page="about">ABOUT</a>
+    <a href="#work" data-page="work">WORK</a>
+    <a href="#posts" data-page="posts">POSTS</a>
+    <a href="#online" data-page="online">ONLINE</a>
+  </nav>
+</div>
+
+<!-- the room is the welcome: no caption over it (the top bar carries the links); the name and line stay for readers and search -->
+<h1 class="sr">The Recovered Room</h1>
+
+<section class="hud panel" id="panel" hidden aria-labelledby="p-title">
+  <header><div><div class="ch" id="p-ch">CH 01</div><h2 id="p-title">About</h2></div><div class="hbtns"><button class="close" id="p-hide" aria-label="Hide the card, the tape plays on" hidden>HIDE</button><button class="close" id="p-close" aria-label="Back to home">HOME</button></div></header>
+  <div class="body" id="p-body"></div>
+</section>
+
+<div class="hud ctl">
+  <div class="hint" id="hint">C use computer · Z zoom TV · 1–6 monitor buttons</div>
+  <div class="btns"><button class="sound" id="cardon" aria-label="Show the Work card" hidden>SHOW CARD · N</button><button class="sound" id="unzoom">BACK TO THE DESK · ESC</button><button class="sound" id="credits"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M12 11v5.4"/><circle cx="12" cy="7.7" r="1.25" fill="currentColor" stroke="none"/></svg><span>CREDITS</span></button><a class="sound" id="reading" href="../" aria-label="Lo-fi version" title="Lo-fi version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg><span>LO-FI</span></a><button class="sound" id="sound" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="spk-w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="spk-x" d="M17 9.5l5 5M22 9.5l-5 5"/></svg><span>SOUND OFF</span></button></div>
+</div>
+<div id="lite" hidden><div class="card" role="dialog" aria-modal="true" aria-labelledby="liteQ" aria-describedby="liteD"><h2 id="liteQ">Switch to the lo-fi version?</h2><p id="liteD">If the 3D adventure here is a little too much, you can switch to a plain website with roughly the same content.</p><div class="row"><button class="sound" id="liteStay">STAY</button><a class="sound" id="liteGo" href="../">GO LO-FI</a></div></div></div>
+
+<div id="tip" hidden></div>
+<a id="plink" hidden target="_blank" rel="noopener"></a>
+<div id="err" hidden></div>
+<div id="live" class="sr" aria-live="polite"></div>
+<div id="pc-sr" class="sr" aria-live="polite"></div>
+  </div>
+  <a class="room-exit" href="../">← Model gallery</a>
+  <div id="room-fallback" role="status" hidden>
+    <h1>Interactive room unavailable</h1>
+    <p>The room needs WebGL 2 and its original scene assets.</p>
+    <a href="../">Return to the model gallery</a>
+  </div>
+  <noscript><p class="room-no-script"><a href="../">Return to the model gallery</a> to view the recovered models as stills.</p></noscript>
+  <script src="./host.js"></script>
+  <script src="./runtime/boot.js"></script>
+</body>
+</html>

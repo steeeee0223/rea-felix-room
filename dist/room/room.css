@@ -1,0 +1,28 @@
+[hidden] { display: none !important; }
+.room-exit {
+  position: fixed;
+  z-index: 12;
+  left: 18px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  padding: 9px 12px;
+  border: 1px solid #dfd6bc70;
+  border-radius: 3px;
+  background: #101510e8;
+  color: #f5f2ea;
+  font: 13px system-ui, sans-serif;
+  text-decoration: none;
+}
+.room-exit:hover { background: #29392c; }
+.room-exit:focus-visible, #room-fallback a:focus-visible { outline: 2px solid #e4c889; outline-offset: 3px; }
+#room-fallback, .room-no-script {
+  position: fixed;
+  inset: 0;
+  padding: 12vh 8vw;
+  background: #191d19;
+  color: #f5f2ea;
+  font: 16px system-ui, sans-serif;
+}
+#room-fallback a, .room-no-script a { color: #b5d9b8; }
+@media (max-width: 600px) {
+  .room-exit { left: auto; right: 10px; bottom: max(62px, calc(env(safe-area-inset-bottom) + 52px)); }
+}

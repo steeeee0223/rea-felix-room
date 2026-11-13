@@ -8,6 +8,7 @@
   <title>The Recovered Room</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./devices/device.css">
   <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
   <script type="module" src="./app.js"></script>
 </head>
@@ -21,7 +22,11 @@
     <main>
       <div class="heading">
         <h1>The Recovered Room</h1>
-        <p>Orbit the recovered models or enter the room to use the TV, VCR, and BASIC computer.</p>
+        <p>Explore the recovered models and try the interactive devices.</p>
+        <nav class="device-links" aria-label="Interactive devices">
+          <a class="room-link" href="./computer/">Use the computer <span aria-hidden="true">→</span></a>
+          <a class="room-link" href="./tv/">Use the TV &amp; VCR <span aria-hidden="true">→</span></a>
+        </nav>
       </div>
 
       <div class="layout">
@@ -44,11 +49,19 @@
 
         <aside class="inventory" aria-labelledby="inventory-title">
           <h2 id="inventory-title">Explore the models</h2>
-          <div class="model-list" aria-label="Select a model">
+          <div class="model-list">
             <button class="model active" type="button" data-model="room" aria-pressed="true">
               <img src="./assets/stills/room.jpg" alt="">
               <span><strong>The room</strong><small>Complete interior</small></span><b aria-hidden="true">↗</b>
             </button>
+            <a class="model" href="./computer/">
+              <img src="./assets/stills/computer.jpg" alt="">
+              <span><strong>Use the computer</strong><small>Interactive BASIC</small></span><b aria-hidden="true">→</b>
+            </a>
+            <a class="model" href="./tv/">
+              <img src="./assets/stills/tv.jpg" alt="">
+              <span><strong>Use the TV &amp; VCR</strong><small>Interactive CRT</small></span><b aria-hidden="true">→</b>
+            </a>
             <button class="model" type="button" data-model="wm" aria-pressed="false">
               <img src="./assets/stills/wm.jpg" alt="">
               <span><strong>Cassette player</strong><small>Desk prop</small></span><b aria-hidden="true">↗</b>
@@ -70,7 +83,6 @@
 
       <footer class="credits">
         <p>Models and textures by Felix Rieseberg and collaborators. Recovered from the browser build with REA.</p>
-        <p>The demo shows the static geometry and room lightmaps.</p>
       </footer>
     </main>
   </div>

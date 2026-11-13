@@ -28,7 +28,7 @@ const hint = document.querySelector('#hint');
 const reset = document.querySelector('#reset');
 const mode = document.querySelector('#view-mode');
 const notice = document.querySelector('#notice');
-const buttons = [...document.querySelectorAll('.model')];
+const buttons = [...document.querySelectorAll('button[data-model]')];
 
 let selected = 'room';
 let stillMode = false;

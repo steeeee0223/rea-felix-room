@@ -98,6 +98,7 @@ h1 { font-family: 'Instrument Serif', 'Baskerville', Georgia, serif; font-weight
   background: transparent;
   cursor: pointer;
 }
+a.model { text-decoration: none; }
 .model:hover { background: #efede4; }
 .model.active { background: var(--selected); border-color: #b9c6b8; }
 .model img { width: 57px; height: 47px; object-fit: cover; border-radius: 2px; background: #303932; }

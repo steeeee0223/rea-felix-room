@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore the recovered 3D room from Felix Rieseberg’s portfolio, with close-ups of its cassette player, floppy disks, and heater."
+    />
+    <meta name="theme-color" content="#f5f2ea" />
+    <title>The Recovered Room</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.ts"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="masthead">
+        <a class="wordmark" href="./" aria-label="The Recovered Room home"
+          ><span class="mark" aria-hidden="true"></span>Room Study</a
+        >
+        <nav class="masthead-links" aria-label="Room links">
+          <a
+            class="source"
+            href="https://felixrieseberg.com/made-by-mechanical-means/"
+            >Original project <span aria-hidden="true">↗</span></a
+          ><a class="room-link" href="./room/"
+            >Enter interactive room <span aria-hidden="true">→</span></a
+          >
+        </nav>
+      </header>
+
+      <main>
+        <div class="heading">
+          <h1>The Recovered Room</h1>
+        </div>
+
+        <div class="layout">
+          <section class="viewer" aria-label="3D model viewer">
+            <div class="stage" id="stage" data-mode="still">
+              <img
+                id="still"
+                src="/assets/stills/room.jpg"
+                alt="Recovered desk, CRT monitor, and cassette tapes in the room"
+                fetchpriority="high"
+              />
+              <div class="canvas" id="canvas" aria-hidden="true"></div>
+              <div class="stage-caption" aria-hidden="true">
+                <i></i><span id="stage-label">Room overview</span>
+              </div>
+              <div class="progress" id="progress" role="status" hidden>
+                Loading model…
+              </div>
+            </div>
+            <div class="viewer-bar">
+              <div class="hint" id="hint">Still preview</div>
+              <div class="viewer-actions">
+                <button id="reset" type="button" disabled>
+                  <span aria-hidden="true">↺</span> Reset view
+                </button>
+                <button id="view-mode" type="button" disabled>
+                  Still view
+                </button>
+              </div>
+            </div>
+            <p id="notice" role="status" hidden></p>
+          </section>
+
+          <aside class="inventory" aria-labelledby="inventory-title">
+            <h2 id="inventory-title">Explore the models</h2>
+            <div class="model-list">
+              <button
+                class="model active"
+                type="button"
+                data-model="room"
+                aria-pressed="true"
+              >
+                <img src="/assets/stills/room.jpg" alt="" />
+                <span
+                  ><strong>The room</strong
+                  ><small>Complete interior</small></span
+                ><b aria-hidden="true">↗</b>
+              </button>
+              <a class="model" href="./computer/">
+                <img src="/assets/stills/computer.jpg" alt="" />
+                <span
+                  ><strong>Use the computer</strong
+                  ><small>Interactive BASIC</small></span
+                ><b aria-hidden="true">→</b>
+              </a>
+              <a class="model" href="./tv/">
+                <img src="/assets/stills/tv.jpg" alt="" />
+                <span
+                  ><strong>Use the TV &amp; VCR</strong
+                  ><small>Interactive CRT</small></span
+                ><b aria-hidden="true">→</b>
+              </a>
+              <button
+                class="model"
+                type="button"
+                data-model="wm"
+                aria-pressed="false"
+              >
+                <img src="/assets/stills/wm.jpg" alt="" />
+                <span
+                  ><strong>Cassette player</strong
+                  ><small>Desk prop</small></span
+                ><b aria-hidden="true">↗</b>
+              </button>
+              <button
+                class="model"
+                type="button"
+                data-model="fl"
+                aria-pressed="false"
+              >
+                <img src="/assets/stills/fl.jpg" alt="" />
+                <span
+                  ><strong>Floppy disks</strong><small>Desk prop</small></span
+                ><b aria-hidden="true">↗</b>
+              </button>
+              <button
+                class="model"
+                type="button"
+                data-model="ht"
+                aria-pressed="false"
+              >
+                <img src="/assets/stills/ht.jpg" alt="" />
+                <span><strong>Heater</strong><small>Room fixture</small></span
+                ><b aria-hidden="true">↗</b>
+              </button>
+            </div>
+            <div class="model-note">
+              <p id="model-description" aria-live="polite">
+                The browser-exported interior, including the CRT, VCR, tapes,
+                and desk props. The separately shipped models are placed where
+                they appear in the room.
+              </p>
+            </div>
+          </aside>
+        </div>
+
+        <footer class="credits">
+          <p>
+            Models and textures by Felix Rieseberg and collaborators. Recovered
+            from the browser build with REA.
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

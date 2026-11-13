@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f2ea" />
+    <title>BASIC computer · The Recovered Room</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/devices/device.css" />
+    <script type="module" src="/devices/computer.ts"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="masthead">
+        <a class="wordmark" href="../"
+          ><span class="mark" aria-hidden="true"></span>Room Study</a
+        >
+        <nav class="device-nav" aria-label="Devices">
+          <a href="../computer/" aria-current="page">Computer</a>
+          <a href="../tv/">TV &amp; VCR</a>
+        </nav>
+      </header>
+      <main>
+        <div class="heading device-heading">
+          <h1>BASIC computer</h1>
+          <p>The CRT monitor, PC and XT keyboard from the recovered room.</p>
+        </div>
+        <div class="layout device-layout">
+          <section class="viewer" aria-label="Interactive 3D model">
+            <div id="device-stage" class="stage device-stage">
+              <p id="device-status" class="device-status" role="status">
+                Loading model…
+              </p>
+              <div
+                id="device-tooltip"
+                class="device-tooltip"
+                aria-hidden="true"
+                hidden
+              ></div>
+              <noscript
+                ><p class="device-status">
+                  Enable JavaScript to use the 3D model.
+                </p></noscript
+              >
+            </div>
+            <div class="viewer-bar">
+              <div class="hint">Drag to rotate · Scroll or pinch to zoom</div>
+              <div class="viewer-actions">
+                <button id="reset-view" type="button" disabled>
+                  Reset view
+                </button>
+              </div>
+            </div>
+          </section>
+          <aside class="inventory device-panel" aria-labelledby="control-title">
+            <h2 id="control-title">Controls</h2>
+            <p>
+              Click the screen to type or tap the keys on the model. Try
+              <code>PRINT 6*7</code> then Enter.
+            </p>
+            <fieldset class="device-controls" id="device-controls" disabled>
+              <legend class="visually-hidden">Computer controls</legend>
+              <button id="type" class="primary" type="button">
+                Type on the computer
+              </button>
+              <button id="read-screen" type="button">Screen close-up</button>
+              <button id="monitor-power" type="button" aria-pressed="true">
+                Monitor power
+              </button>
+            </fieldset>
+            <textarea
+              class="pc-input"
+              id="pc-input"
+              aria-label="BASIC keyboard"
+              tabindex="-1"
+              autocapitalize="off"
+              autocomplete="off"
+              spellcheck="false"
+            ></textarea>
+            <pre
+              class="visually-hidden"
+              id="pc-output"
+              aria-label="Computer screen text"
+            ></pre>
+          </aside>
+        </div>
+        <footer class="credits">
+          <p>Models and software by Felix Rieseberg and collaborators.</p>
+          <a href="../devices/computer.glb" download>Download model (.glb)</a>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

@@ -40,6 +40,7 @@ h1 { font-family: 'Instrument Serif', 'Baskerville', Georgia, serif; font-weight
 .layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(245px, 302px); gap: clamp(22px, 3vw, 43px); align-items: start; }
 .viewer { min-width: 0; }
 .stage {
+  width: 100%;
   aspect-ratio: 16 / 10;
   min-height: 300px;
   position: relative;
